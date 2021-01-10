@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  book_build:
+    build: .
+    user: "${UID}:${GID}"
+    volumes:
+      - .:/usr/src/app

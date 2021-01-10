@@ -17,13 +17,17 @@ namespace :book do
     `bundle exec asciidoctor-epub3 progit.asc`
     puts " -- Epub output at progit.epub"
 
-    puts "Converting to Mobi (kf8)..."
-    `bundle exec asciidoctor-epub3 -a ebook-format=kf8 progit.asc`
-    puts " -- Mobi output at progit.mobi"
+    # puts "Converting to Mobi (kf8)..."
+    # `bundle exec asciidoctor-epub3 -a ebook-format=kf8 progit.asc`
+    # puts " -- Mobi output at progit.mobi"
 
     puts "Converting to PDF... (this one takes a while)"
     `bundle exec asciidoctor-pdf progit.asc 2>/dev/null`
     puts " -- PDF  output at progit.pdf"
+
+    puts "Delete images directory..."
+    `rm -r ./images`
+    puts " -- Deleted images"
   end
 end
 
